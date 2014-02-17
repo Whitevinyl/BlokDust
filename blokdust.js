@@ -359,11 +359,29 @@ function plotParticles() {
     var particle = particles[i];
 	particle.life -= 1;
  
+    // COLLISION CHECK //
+	particleHitTest(dx + (particle.position.x*units),dy + (particle.position.y*units),particle);
+ 
+ 
     if (particle.life<1) continue;
     particle.move();
     currentParticles.push(particle); // UPDATE MANAGEMENT
   }
   particles = currentParticles; // UPDATE ORIGINAL ARRAY
+}
+
+function particleHitTest(x,y,part) {
+	var comps = block3;
+	compCheck = comps.length;
+	for (i=0;i<comps.length;i++) {
+		var point = comps[i].position;
+		var ref = comps[i].reference;
+		
+		if (outlineCheck(point.x,point.y,ref,x,y)==true) {
+			part.life = -10000;
+			particleCollision(comps[i]);
+		}
+	}
 }
 
 
@@ -965,7 +983,7 @@ function circleCheck(x,y,mx,my,rad) { // IS CURSOR WITHIN GIVEN RADIUS
 }
 
 
-function outlineCheck(x,y,reference) {
+function outlineCheck(x,y,reference,checkX,checkY) {
 	
 	var ref = reference;
 	var verts = ref.vertices;
@@ -979,7 +997,7 @@ function outlineCheck(x,y,reference) {
 	
 	
 	
-	if (cxa.isPointInPath(mouseX,mouseY)) {
+	if (cxa.isPointInPath(checkX,checkY)) {
         return true;
     } else {
 		return false;
@@ -1045,7 +1063,7 @@ function getPosition(event) { // ANY MOUSECLICK
 			for (i=0;i<comps.length;i++) {
 				var point = comps[i].position;
 				var ref = comps[i].reference;
-				roll = outlineCheck(point.x,point.y,ref);
+				roll = outlineCheck(point.x,point.y,ref,mouseX,mouseY);
 				if (roll==true) {
 					dragged = comps[i]; // YES, STOP LOOKING
 					break;
