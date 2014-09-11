@@ -9,10 +9,20 @@
         <metaname="robots" content="noodp,noydir" />
         <meta name="keywords" content="..."  />
 
-<script type="text/javascript" src="soundSetup.js"></script>
-<script type="text/javascript" src="eventTest.js"></script>
-<script type="text/javascript" src="blokdust.js"></script>
-<script type="text/javascript" src="screenfull.js"></script>
+<script type="text/javascript" src="js/other/PxLoader.js"></script>
+<script type="text/javascript" src="js/other/PxLoaderImage.js"></script>
+<script type="text/javascript" src="js/other/screenfull.js"></script>
+<script type="text/javascript" src="js/other/PixelPalette.js"></script>
+
+<script type="text/javascript" src="js/blokMain.js"></script>
+<script type="text/javascript" src="js/blokUi.js"></script>
+<script type="text/javascript" src="js/blokSound.js"></script>
+<script type="text/javascript" src="js/blokParticles.js"></script>
+<script type="text/javascript" src="js/blokDrawing.js"></script>
+<script type="text/javascript" src="js/blokEvent.js"></script>
+
+
+
 
 
 <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
@@ -26,20 +36,12 @@
 <link rel="image_src" type="image/png" href="thumb.jpg">
 </head>
 
-<body onload="init()" onresize="resize_canvas()">
+<body onload="init()" onresize="measurement()">
 
 
-    
-    <canvas id="layerA" class="unselectable"></canvas>
-    
-    <div id="keyLayer" tabindex='1'></div>
-    
-    
-<div id="sharing" class="unselectable">
-      
-
-      
-</div>
+<canvas id="layerA" class="unselectable"></canvas>
+ 
+<div id="sharing" class="unselectable"></div>
 
 
 
