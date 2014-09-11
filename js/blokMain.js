@@ -32,6 +32,7 @@ var dx = 0;
 var dy = 0;
 var sx = 0;
 var sy = 0;
+var sm = 0;
 var grd = 30; // GRID SNAP SIZE
 
 

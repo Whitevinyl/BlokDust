@@ -38,35 +38,35 @@ function drawScene() {
 		if (block1[i]==dragged) {
 			cxa.globalAlpha = 0.5;
 		}
-		var position = block1[i].position;
-		sx = dx + ((position.x)*units);
-	    sy = dy + ((position.y)*units);
+		
+		// SET BLOCK'S DRAWING ORIGIN/SCALE/ETC
+		localise(block1[i]);
 		
 		cxa.fillStyle = col[0]; // BLUE
 		cxa.beginPath();
-		cxa.moveTo(sx-((1*grd)*units),sy); //l
-		cxa.lineTo(sx+((1*grd)*units),sy-((2*grd)*units)); //t
-		cxa.lineTo(sx+((2*grd)*units),sy-((1*grd)*units)); //r
-		cxa.lineTo(sx+((2*grd)*units),sy); //r
-		cxa.lineTo(sx,sy+((2*grd)*units)); //b
-		cxa.lineTo(sx-((1*grd)*units),sy+((1*grd)*units)); //b
+		cxa.moveTo(sx-((1*grd)*sm),sy); //l
+		cxa.lineTo(sx+((1*grd)*sm),sy-((2*grd)*sm)); //t
+		cxa.lineTo(sx+((2*grd)*sm),sy-((1*grd)*sm)); //r
+		cxa.lineTo(sx+((2*grd)*sm),sy); //r
+		cxa.lineTo(sx,sy+((2*grd)*sm)); //b
+		cxa.lineTo(sx-((1*grd)*sm),sy+((1*grd)*sm)); //b
 		cxa.closePath();
 		cxa.fill();
 		
 		cxa.fillStyle = col[1]; // GREEN
 		cxa.beginPath();
 		cxa.moveTo(sx,sy); //l
-		cxa.lineTo(sx+((1*grd)*units),sy-((1*grd)*units)); //r
-		cxa.lineTo(sx+((2*grd)*units),sy); //r
-		cxa.lineTo(sx,sy+((2*grd)*units)); //b
+		cxa.lineTo(sx+((1*grd)*sm),sy-((1*grd)*sm)); //r
+		cxa.lineTo(sx+((2*grd)*sm),sy); //r
+		cxa.lineTo(sx,sy+((2*grd)*sm)); //b
 		cxa.closePath();
 		cxa.fill();
 		
 		cxa.fillStyle = col[5]; // WHITE
 		cxa.beginPath();
-		cxa.moveTo(sx-((1*grd)*units),sy); //l
-		cxa.lineTo(sx+((1*grd)*units),sy-((2*grd)*units)); //r
-		cxa.lineTo(sx+((1*grd)*units),sy-((1*grd)*units)); //r
+		cxa.moveTo(sx-((1*grd)*sm),sy); //l
+		cxa.lineTo(sx+((1*grd)*sm),sy-((2*grd)*sm)); //r
+		cxa.lineTo(sx+((1*grd)*sm),sy-((1*grd)*sm)); //r
 		cxa.lineTo(sx,sy); //b
 		cxa.closePath();
 		cxa.fill();
@@ -80,17 +80,16 @@ function drawScene() {
 		if (block2[i]==dragged) {
 			cxa.globalAlpha = 0.5;
 		}
-		var position = block2[i].position;
-		sx = dx + ((position.x)*units);
-	    sy = dy + ((position.y)*units);
+		// SET BLOCK'S DRAWING ORIGIN/SCALE/ETC
+		localise(block2[i]);
 		
 		cxa.beginPath();
-		cxa.moveTo(sx-((1*grd)*units),sy); //l
-		cxa.lineTo(sx,sy-((1*grd)*units)); //t
-		cxa.lineTo(sx+((1*grd)*units),sy-((1*grd)*units)); //t
-		cxa.lineTo(sx+((2*grd)*units),sy); //r
-		cxa.lineTo(sx+((1*grd)*units),sy+((1*grd)*units)); //b
-		cxa.lineTo(sx,sy+((1*grd)*units)); //b
+		cxa.moveTo(sx-((1*grd)*sm),sy); //l
+		cxa.lineTo(sx,sy-((1*grd)*sm)); //t
+		cxa.lineTo(sx+((1*grd)*sm),sy-((1*grd)*sm)); //t
+		cxa.lineTo(sx+((2*grd)*sm),sy); //r
+		cxa.lineTo(sx+((1*grd)*sm),sy+((1*grd)*sm)); //b
+		cxa.lineTo(sx,sy+((1*grd)*sm)); //b
 		cxa.closePath();
 		cxa.fill();
 		
@@ -105,15 +104,14 @@ function drawScene() {
 		if (block3[i]==dragged) {
 			cxa.globalAlpha = 0.5;
 		}
-		var position = block3[i].position;
-		sx = dx + ((position.x)*units);
-	    sy = dy + ((position.y)*units);
+		// SET BLOCK'S DRAWING ORIGIN/SCALE/ETC
+		localise(block3[i]);
 		
 		cxa.beginPath();
-		cxa.moveTo(sx,sy-((1*grd)*units)); //t
-		cxa.lineTo(sx+((1*grd)*units),sy-((2*grd)*units)); //t
-		cxa.lineTo(sx+((1*grd)*units),sy+((3*grd)*units)); //b
-		cxa.lineTo(sx,sy+((4*grd)*units)); //b
+		cxa.moveTo(sx,sy-((1*grd)*sm)); //t
+		cxa.lineTo(sx+((1*grd)*sm),sy-((2*grd)*sm)); //t
+		cxa.lineTo(sx+((1*grd)*sm),sy+((3*grd)*sm)); //b
+		cxa.lineTo(sx,sy+((4*grd)*sm)); //b
 		cxa.closePath();
 		cxa.fill();
 	}
@@ -125,33 +123,32 @@ function drawScene() {
 		if (block4[i]==dragged) {
 			cxa.globalAlpha = 0.5;
 		}
-		var position = block4[i].position;
-		sx = dx + ((position.x)*units);
-	    sy = dy + ((position.y)*units);
+		// SET BLOCK'S DRAWING ORIGIN/SCALE/ETC
+		localise(block4[i]);
 		
 		cxa.fillStyle = col[2]; // PURPLE
 		cxa.beginPath();
-		cxa.moveTo(sx-((2*grd)*units),sy); //l
-		cxa.lineTo(sx,sy-((2*grd)*units)); //t
-		cxa.lineTo(sx+((2*grd)*units),sy); //r
-		cxa.lineTo(sx+((1*grd)*units),sy+((1*grd)*units)); //b
-		cxa.lineTo(sx-((1*grd)*units),sy+((1*grd)*units)); //b
+		cxa.moveTo(sx-((2*grd)*sm),sy); //l
+		cxa.lineTo(sx,sy-((2*grd)*sm)); //t
+		cxa.lineTo(sx+((2*grd)*sm),sy); //r
+		cxa.lineTo(sx+((1*grd)*sm),sy+((1*grd)*sm)); //b
+		cxa.lineTo(sx-((1*grd)*sm),sy+((1*grd)*sm)); //b
 		cxa.closePath();
 		cxa.fill();
 		
 		cxa.fillStyle = col[5]; // WHITE
 		cxa.beginPath();
-		cxa.moveTo(sx-((2*grd)*units),sy); //l
-		cxa.lineTo(sx,sy-((2*grd)*units)); //t
+		cxa.moveTo(sx-((2*grd)*sm),sy); //l
+		cxa.lineTo(sx,sy-((2*grd)*sm)); //t
 		cxa.lineTo(sx,sy); //c
-		cxa.lineTo(sx-((1*grd)*units),sy+((1*grd)*units)); //b
+		cxa.lineTo(sx-((1*grd)*sm),sy+((1*grd)*sm)); //b
 		cxa.closePath();
 		cxa.fill();
 		
 		cxa.fillStyle = col[1]; // GREEN
 		cxa.beginPath();
-		cxa.moveTo(sx,sy-((2*grd)*units)); //t
-		cxa.lineTo(sx+((1*grd)*units),sy-((1*grd)*units)); //r
+		cxa.moveTo(sx,sy-((2*grd)*sm)); //t
+		cxa.lineTo(sx+((1*grd)*sm),sy-((1*grd)*sm)); //r
 		cxa.lineTo(sx,sy); //c
 		cxa.closePath();
 		cxa.fill();
@@ -165,27 +162,26 @@ function drawScene() {
 		if (block5[i]==dragged) {
 			cxa.globalAlpha = 0.5;
 		}
-		var position = block5[i].position;
-		sx = dx + ((position.x)*units);
-	    sy = dy + ((position.y)*units);
+		// SET BLOCK'S DRAWING ORIGIN/SCALE/ETC
+		localise(block5[i]);
 		
 		cxa.fillStyle = col[2]; // PURPLE
 		cxa.beginPath();
-		cxa.moveTo(sx-((1*grd)*units),sy); //l
-		cxa.lineTo(sx,sy-((1*grd)*units)); //t
-		cxa.lineTo(sx+((1*grd)*units),sy); //r
-		cxa.lineTo(sx+((1*grd)*units),sy+((1*grd)*units)); //b
-		cxa.lineTo(sx,sy+((2*grd)*units)); //b
-		cxa.lineTo(sx-((1*grd)*units),sy+((1*grd)*units)); //b
+		cxa.moveTo(sx-((1*grd)*sm),sy); //l
+		cxa.lineTo(sx,sy-((1*grd)*sm)); //t
+		cxa.lineTo(sx+((1*grd)*sm),sy); //r
+		cxa.lineTo(sx+((1*grd)*sm),sy+((1*grd)*sm)); //b
+		cxa.lineTo(sx,sy+((2*grd)*sm)); //b
+		cxa.lineTo(sx-((1*grd)*sm),sy+((1*grd)*sm)); //b
 		cxa.closePath();
 		cxa.fill();
 		
 		cxa.fillStyle = col[5]; // WHITE
 		cxa.beginPath();
-		cxa.moveTo(sx-((1*grd)*units),sy); //l
-		cxa.lineTo(sx,sy-((1*grd)*units)); //t
-		cxa.lineTo(sx+((1*grd)*units),sy); //r
-		cxa.lineTo(sx,sy+((1*grd)*units)); //b
+		cxa.moveTo(sx-((1*grd)*sm),sy); //l
+		cxa.lineTo(sx,sy-((1*grd)*sm)); //t
+		cxa.lineTo(sx+((1*grd)*sm),sy); //r
+		cxa.lineTo(sx,sy+((1*grd)*sm)); //b
 		cxa.closePath();
 		cxa.fill();
 	}
@@ -198,25 +194,24 @@ function drawScene() {
 		if (block6[i]==dragged) {
 			cxa.globalAlpha = 0.5;
 		}
-		var position = block6[i].position;
-		sx = dx + ((position.x)*units);
-	    sy = dy + ((position.y)*units);
+		// SET BLOCK'S DRAWING ORIGIN/SCALE/ETC
+		localise(block6[i]);
 		
 		
 		cxa.fillStyle = col[2];
 		cxa.beginPath();
-		cxa.moveTo(sx-((2*grd)*units),sy); //l
-		cxa.lineTo(sx+((2*grd)*units),sy); //r
-		cxa.lineTo(sx,sy+((2*grd)*units)); //b
+		cxa.moveTo(sx-((2*grd)*sm),sy); //l
+		cxa.lineTo(sx+((2*grd)*sm),sy); //r
+		cxa.lineTo(sx,sy+((2*grd)*sm)); //b
 		cxa.closePath();
 		cxa.fill();
 		
 		cxa.fillStyle = col[4];
 		cxa.beginPath();
-		cxa.moveTo(sx-((1*grd)*units),sy); //l
-		cxa.lineTo(sx,sy-((1*grd)*units)); //t
-		cxa.lineTo(sx+((1*grd)*units),sy); //r
-		cxa.lineTo(sx,sy+((1*grd)*units)); //b
+		cxa.moveTo(sx-((1*grd)*sm),sy); //l
+		cxa.lineTo(sx,sy-((1*grd)*sm)); //t
+		cxa.lineTo(sx+((1*grd)*sm),sy); //r
+		cxa.lineTo(sx,sy+((1*grd)*sm)); //b
 		cxa.closePath();
 		cxa.fill();
 	}
@@ -308,3 +303,18 @@ function drawIntro2() {
 }
 
 
+//--------------------------------------------------------------------------------------------
+
+//    DRAWING FUNCTIONS
+
+//--------------------------------------------------------------------------------------------
+
+
+// SET DRAWING ORIGIN & SCALE FOR A BLOCK
+function localise(blok,u) {
+	u = u || units;
+	var position = blok.position;
+	sm = u;
+	sx = dx + ((position.x)*sm);
+	sy = dy + ((position.y)*sm);
+}
