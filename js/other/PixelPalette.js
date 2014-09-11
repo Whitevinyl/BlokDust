@@ -47,5 +47,5 @@ function paletteLoaded2() {
 	// FINISHED INITALISING, GO TO SCENE 1
 	col = palettes[0];
 	hud = palettes[1];
-	scene = 1;
+	scene = 3;
 }
